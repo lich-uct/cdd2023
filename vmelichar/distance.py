@@ -11,7 +11,7 @@ df.columns = ['Mol', 'Source', 'FP']
 n = df.shape[0]
 dist_matrix = np.zeros((n,n))    # initialize distance matrix to a square of zeros
 for i in range(n):
-    print(i)
+    print(i % 100)
     for j in range(i, n):
         dist_matrix[i,j] = DataStructs.TanimotoSimilarity(df.FP[i], df.FP[j])
         dist_matrix[j,i] = dist_matrix[i,j]
